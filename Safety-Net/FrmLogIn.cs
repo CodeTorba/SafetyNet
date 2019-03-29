@@ -21,7 +21,8 @@ namespace Safety_Net
         private void btnLogIn_Click(object sender, EventArgs e)
         {
             FrmTwoWayVerification twoway = new FrmTwoWayVerification();
-           
+            FrmMain main = new FrmMain();
+            Boolean test = true;
             if (tbUserName.Text =="" || tbPassword.Text == "")
             {
                 label4.Visible = true;
@@ -52,10 +53,20 @@ namespace Safety_Net
                                     User.UserName = reader["UserName"].ToString();
                                     User.Password = reader["Password"].ToString();
                                 }
-                                this.Hide();
-                                twoway.Closed += (s, args) => this.Close();
-                                twoway.Show();
 
+                                if (test == false)
+                                {
+                                    this.Hide();
+                                    twoway.Closed += (s, args) => this.Close();
+                                    twoway.Show();
+                                }
+                                else
+                                {
+                                    this.Hide();
+                                    main.Closed += (s, args) => this.Close();
+                                    main.Show();
+                                    
+                                }
 
                             }
                             else
