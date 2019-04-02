@@ -8,8 +8,8 @@ namespace Safety_Net
 {
     class DataLog
     {
-        public int LogNumber;
-        public string IPAddress;
+        public string hostName;
+        public string header;
         public string Data;
         public string Timestamp;
     }

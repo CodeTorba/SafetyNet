@@ -32,16 +32,17 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnOpenDataLog = new System.Windows.Forms.Button();
-            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.hScrollBar2 = new System.Windows.Forms.HScrollBar();
             this.vScrollBar2 = new System.Windows.Forms.VScrollBar();
+            this.hScrollBar2 = new System.Windows.Forms.HScrollBar();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -99,11 +100,36 @@
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.label3);
             this.splitContainer2.Panel2.Controls.Add(this.vScrollBar2);
             this.splitContainer2.Panel2.Controls.Add(this.hScrollBar2);
             this.splitContainer2.Size = new System.Drawing.Size(1310, 364);
             this.splitContainer2.SplitterDistance = 54;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // btnOpenDataLog
+            // 
+            this.btnOpenDataLog.Location = new System.Drawing.Point(12, 19);
+            this.btnOpenDataLog.Name = "btnOpenDataLog";
+            this.btnOpenDataLog.Size = new System.Drawing.Size(147, 22);
+            this.btnOpenDataLog.TabIndex = 0;
+            this.btnOpenDataLog.Text = "Open Data Log";
+            this.btnOpenDataLog.UseVisualStyleBackColor = true;
+            this.btnOpenDataLog.Click += new System.EventHandler(this.btnOpenDataLog_Click);
+            // 
+            // vScrollBar2
+            // 
+            this.vScrollBar2.Location = new System.Drawing.Point(1292, 0);
+            this.vScrollBar2.Name = "vScrollBar2";
+            this.vScrollBar2.Size = new System.Drawing.Size(15, 289);
+            this.vScrollBar2.TabIndex = 3;
+            // 
+            // hScrollBar2
+            // 
+            this.hScrollBar2.Location = new System.Drawing.Point(9, 289);
+            this.hScrollBar2.Name = "hScrollBar2";
+            this.hScrollBar2.Size = new System.Drawing.Size(1298, 17);
+            this.hScrollBar2.TabIndex = 2;
             // 
             // splitContainer3
             // 
@@ -128,6 +154,28 @@
             this.splitContainer3.SplitterDistance = 180;
             this.splitContainer3.TabIndex = 0;
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(6, 45);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1275, 117);
+            this.panel1.TabIndex = 3;
+            // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Location = new System.Drawing.Point(1292, 0);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(15, 163);
+            this.vScrollBar1.TabIndex = 2;
+            // 
+            // hScrollBar1
+            // 
+            this.hScrollBar1.Location = new System.Drawing.Point(3, 163);
+            this.hScrollBar1.Name = "hScrollBar1";
+            this.hScrollBar1.Size = new System.Drawing.Size(1304, 17);
+            this.hScrollBar1.TabIndex = 1;
+            this.hScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar1_Scroll);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -137,6 +185,13 @@
             this.label1.Size = new System.Drawing.Size(193, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "In-Scope Variables";
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(6, 38);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1274, 125);
+            this.panel2.TabIndex = 1;
             // 
             // label2
             // 
@@ -148,58 +203,15 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Out of Scope Variables";
             // 
-            // btnOpenDataLog
+            // label3
             // 
-            this.btnOpenDataLog.Location = new System.Drawing.Point(12, 19);
-            this.btnOpenDataLog.Name = "btnOpenDataLog";
-            this.btnOpenDataLog.Size = new System.Drawing.Size(147, 22);
-            this.btnOpenDataLog.TabIndex = 0;
-            this.btnOpenDataLog.Text = "Open Data Log";
-            this.btnOpenDataLog.UseVisualStyleBackColor = true;
-            this.btnOpenDataLog.Click += new System.EventHandler(this.btnOpenDataLog_Click);
-            // 
-            // hScrollBar1
-            // 
-            this.hScrollBar1.Location = new System.Drawing.Point(3, 163);
-            this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(1304, 17);
-            this.hScrollBar1.TabIndex = 1;
-            this.hScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar1_Scroll);
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(1292, 0);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(15, 163);
-            this.vScrollBar1.TabIndex = 2;
-            // 
-            // hScrollBar2
-            // 
-            this.hScrollBar2.Location = new System.Drawing.Point(9, 289);
-            this.hScrollBar2.Name = "hScrollBar2";
-            this.hScrollBar2.Size = new System.Drawing.Size(1298, 17);
-            this.hScrollBar2.TabIndex = 2;
-            // 
-            // vScrollBar2
-            // 
-            this.vScrollBar2.Location = new System.Drawing.Point(1292, 0);
-            this.vScrollBar2.Name = "vScrollBar2";
-            this.vScrollBar2.Size = new System.Drawing.Size(15, 289);
-            this.vScrollBar2.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(6, 45);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1275, 117);
-            this.panel1.TabIndex = 3;
-            // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(6, 38);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1274, 125);
-            this.panel2.TabIndex = 1;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "label3";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // FrmMain
             // 
@@ -210,12 +222,14 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMain";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.splitContainer3.Panel1.ResumeLayout(false);
@@ -243,5 +257,6 @@
         private System.Windows.Forms.HScrollBar hScrollBar2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label3;
     }
 }

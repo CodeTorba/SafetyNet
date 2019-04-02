@@ -20,7 +20,7 @@ namespace Safety_Net
         {
             List<DataLog> lstData = new List<DataLog>();
 
-            string query = "SELECT * FROM tbl_Logs;";
+            string query = "SELECT * FROM dataLog;";
             using (SQLiteConnection conn = new SQLiteConnection("data source = Safety-Netdb.db"))
             {
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
@@ -34,13 +34,14 @@ namespace Safety_Net
                             while (reader.Read())
                             {
                                 DataLog datalog = new DataLog();
-                                datalog.LogNumber = (int) reader["LogNumber"];
-                                datalog.IPAddress = reader["IPAddress"].ToString();
+                                datalog.hostName= reader["HostName"].ToString();
                                 datalog.Data = reader["Data"].ToString();
+                                datalog.header = reader["Header"].ToString();
                                 datalog.Timestamp = reader["TimeStamp"].ToString();
                                 lstData.Add(datalog);
+                                dataGridView1.Rows.Add(datalog.Timestamp, datalog.hostName, datalog.header, datalog.Data);
                             }
-
+                          
                         }
                      
                     }
@@ -59,7 +60,12 @@ namespace Safety_Net
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+        }
 
+        private void FrmDataLog_Load(object sender, EventArgs e)
+        {
+            DatabaseConnection();
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Safety_Net
 {
@@ -41,6 +42,26 @@ namespace Safety_Net
         private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            Proxy proxy = new Proxy();
+            ThreadStart threadDelegate = new ThreadStart(proxy.doProxy);
+            Thread newThread = new Thread(threadDelegate);
+            //proxy.doProxy();
+
+            newThread.Start();
+            
+   
+
+       
+            
         }
     }
 }
