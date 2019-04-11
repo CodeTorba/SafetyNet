@@ -14,13 +14,15 @@ namespace Safety_Net
   
     public partial class FrmTwoWayVerification : Form
     {
-        FrmMain mainForm = new FrmMain();
+        public string userName;
+        
         public static string phoneNumber;
         public static Random random = new Random();
         public static int verificationint= random.Next(100000,999999) ;
         public string verificationCode = verificationint.ToString();
-        public FrmTwoWayVerification()
+        public FrmTwoWayVerification(string username)
         {
+            userName = username;
             InitializeComponent();
            
         }
@@ -47,6 +49,7 @@ namespace Safety_Net
         {
             if(tbVerify.Text == verificationCode)
             {
+                FrmMain mainForm = new FrmMain(userName);
                 this.Hide();
                 mainForm.Closed += (s, args) => this.Close();
                 mainForm.Show();
