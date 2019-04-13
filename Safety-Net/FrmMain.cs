@@ -120,5 +120,10 @@ namespace Safety_Net
         {
 
         }
+
+        private void ckBoxes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

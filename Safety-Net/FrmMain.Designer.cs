@@ -144,6 +144,7 @@
             this.ckBoxes.Name = "ckBoxes";
             this.ckBoxes.Size = new System.Drawing.Size(1310, 274);
             this.ckBoxes.TabIndex = 0;
+            this.ckBoxes.SelectedIndexChanged += new System.EventHandler(this.ckBoxes_SelectedIndexChanged);
             // 
             // FrmMain
             // 
