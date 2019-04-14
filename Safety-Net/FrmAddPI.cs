@@ -13,9 +13,11 @@ namespace Safety_Net
 {
     public partial class FrmAddPI : Form
     {
+        public FrmMain main;
         public string userName;
-        public FrmAddPI(string uname)
+        public FrmAddPI(string uname, FrmMain m)
         {
+            main = m; 
             userName = uname;
             InitializeComponent();
         }
@@ -35,11 +37,17 @@ namespace Safety_Net
             if (result == DialogResult.Yes)
             {
                 PI privClass = new PI(tbVariableName.Text, tbPI.Text);
-                checkIfTableExists();
+                //checkIfTableExists();
                 addToDatabase(privClass);
                 //create table
                 //Add PI to addtable
-
+                //FrmMain main = new FrmMain(userName);
+                main.ckBoxes.Items.Add(privClass.getVarName());
+                main.setPiToList(privClass);
+                //FrmMain.ckBoxes.Items.Add(privClass);
+                //FrmMain.ckBoxes.Refresh();
+                //main.ckBoxes.Items.Add(privClass);
+                this.Close();
             }
             else
             {
@@ -49,8 +57,8 @@ namespace Safety_Net
         }
         private void addToDatabase(PI personalInfo)
         {
-            string query = "INSERT INTO PI(UserName, VarName, VarInfo) VALUES (@user,@varname, @varinfo));";
-            //string query = "CREATE TABLE Users(Timestamp text NOT NULL, HostName text NOT NULL,Header text NOT NULL, Data text  NOT NULL);";
+            string query = "INSERT INTO PIS (UserName, VarName, VarInfo) VALUES (@user,@varname, @varinfo);";
+            //string query = "CREATE TABLE PIS(UserName text NOT NULL, VarName text NOT NULL,VarInfo text NOT NULL);";
             using (SQLiteConnection conn = new SQLiteConnection("data source = Safety-Netdb.db"))
             {
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
@@ -61,14 +69,14 @@ namespace Safety_Net
                     cmd.Parameters.Add("@varinfo", DbType.String).Value = personalInfo.getVarInfo();
                    
 
-                    try
+                   try
                     {
                         conn.Open();
                         int rows = cmd.ExecuteNonQuery();
                     }
                     catch (SQLiteException)
                     {
-
+                        string exception = "Oh no you didn't";
                     }
                     finally
                     {

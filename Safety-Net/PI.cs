@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Safety_Net
 {
-    class PI
+    public class PI
     {
         private string varName;
         private string varInfo;
