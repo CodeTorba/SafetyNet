@@ -32,7 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.btnOpenDataLog = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnAddPrivateInfo = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.TimeStamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,7 +41,7 @@
             this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            ckBoxes = new System.Windows.Forms.CheckedListBox();
+            this.ckBoxes = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -73,7 +73,7 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.btnOpenDataLog);
-            this.splitContainer2.Panel1.Controls.Add(this.button1);
+            this.splitContainer2.Panel1.Controls.Add(this.btnDelete);
             this.splitContainer2.Panel1.Controls.Add(this.btnAddPrivateInfo);
             this.splitContainer2.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel1_Paint);
             // 
@@ -96,15 +96,15 @@
             this.btnOpenDataLog.UseVisualStyleBackColor = true;
             this.btnOpenDataLog.Click += new System.EventHandler(this.btnOpenDataLog_Click);
             // 
-            // button1
+            // btnDelete
             // 
-            this.button1.Location = new System.Drawing.Point(246, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 41);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Update PI";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnDelete.Location = new System.Drawing.Point(246, 12);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(107, 41);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Text = "Delete PI";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAddPrivateInfo
             // 
@@ -175,7 +175,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(ckBoxes);
+            this.splitContainer1.Panel2.Controls.Add(this.ckBoxes);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(1310, 716);
             this.splitContainer1.SplitterDistance = 438;
@@ -183,14 +183,14 @@
             // 
             // ckBoxes
             // 
-            ckBoxes.AccessibleName = "ckboxes";
-            ckBoxes.Dock = System.Windows.Forms.DockStyle.Fill;
-            ckBoxes.FormattingEnabled = true;
-            ckBoxes.Location = new System.Drawing.Point(0, 0);
-            ckBoxes.Name = "ckBoxes";
-            ckBoxes.Size = new System.Drawing.Size(1310, 274);
-            ckBoxes.TabIndex = 0;
-            ckBoxes.SelectedIndexChanged += new System.EventHandler(this.ckBoxes_SelectedIndexChanged);
+            this.ckBoxes.AccessibleName = "ckboxes";
+            this.ckBoxes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckBoxes.FormattingEnabled = true;
+            this.ckBoxes.Location = new System.Drawing.Point(0, 0);
+            this.ckBoxes.Name = "ckBoxes";
+            this.ckBoxes.Size = new System.Drawing.Size(1310, 274);
+            this.ckBoxes.TabIndex = 0;
+            this.ckBoxes.SelectedIndexChanged += new System.EventHandler(this.ckBoxes_SelectedIndexChanged);
             // 
             // FrmMain
             // 
@@ -220,7 +220,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAddPrivateInfo;
         private System.Windows.Forms.Button btnOpenDataLog;
         private System.Windows.Forms.Label label3;

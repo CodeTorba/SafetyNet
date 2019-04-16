@@ -14,7 +14,7 @@ namespace Safety_Net
     public partial class FrmMain : Form
     {
         public string userName;
-        private List<PI> allPis;
+        public List<PI> allPis;
         public FrmMain(string uname)
         {
             userName = uname;
@@ -142,9 +142,11 @@ namespace Safety_Net
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            FrmDeletePI deletePI = new FrmDeletePI(this);
+            deletePI.Show();
         }
     }
 }

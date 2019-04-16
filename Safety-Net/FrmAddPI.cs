@@ -88,6 +88,34 @@ namespace Safety_Net
                 }
             }
         }
+        private void removeFromDatabase(PI personalInfo)
+        {
+            string variable_name = personalInfo.getVarName();
+            string query = "DELETE FROM PIS WHERE VarName = " + variable_name + ";";
+            //string query = "CREATE TABLE PIS(UserName text NOT NULL, VarName text NOT NULL,VarInfo text NOT NULL);";
+            using (SQLiteConnection conn = new SQLiteConnection("data source = Safety-Netdb.db"))
+            {
+                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                {
+                    try
+                    {
+                        conn.Open();
+                        int rows = cmd.ExecuteNonQuery();
+                    }
+                    catch (SQLiteException)
+                    {
+                        string exception = "Oh no you didn't";
+                    }
+                    finally
+                    {
+                        conn.Close();
+
+                    }
+
+
+                }
+            }
+        }
         private void checkIfTableExists()
         {
             bool exists;
