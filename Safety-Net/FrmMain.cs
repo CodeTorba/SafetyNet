@@ -14,12 +14,17 @@ namespace Safety_Net
     public partial class FrmMain : Form
     {
         public string userName;
+        public List<PI> allPis;
         public FrmMain(string uname)
         {
             userName = uname;
             InitializeComponent();
         }
 
+        public void setPiToList(PI p)
+        {
+            allPis.Add(p);
+        }
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -56,13 +61,13 @@ namespace Safety_Net
             //proxy.doProxy();
 
             // newThread.Start();
-            ////<PI> allPis = grabPIFromDatabase();
-            // foreach(PI x in allPis)
-            // {
+            allPis = grabPIFromDatabase();
+            foreach(PI x in allPis)
+            {
+                ckBoxes.Items.Add(x.getVarName());
 
-
-            //}
-            ckBoxes.Items.Add("pkFire");
+            }
+            
 
 
 
@@ -71,14 +76,15 @@ namespace Safety_Net
 
         private void btnAddPrivateInfo_Click(object sender, EventArgs e)
         {
-            FrmAddPI addPI = new FrmAddPI(userName);
+            FrmAddPI addPI = new FrmAddPI(userName, this);
             addPI.Show();
+            //this.FrmMain_Load(btnAddPrivateInfo, e);
         }
 
         private List<PI> grabPIFromDatabase()
         {
             List<PI> allPis = new List<PI>();
-            string query = "SELECT * FROM PI WHERE UserName = '" + userName + "';";
+            string query = "SELECT * FROM PIS WHERE UserName = '" + userName + "';";
             using (SQLiteConnection conn = new SQLiteConnection("data source = Safety-Netdb.db"))
             {
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
@@ -117,6 +123,33 @@ namespace Safety_Net
         }
 
         private void splitContainer3_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ckBoxes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            FrmDeletePI deletePI = new FrmDeletePI(this);
+            deletePI.Show();
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
         {
 
         }

@@ -28,19 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnOpenDataLog = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnAddPrivateInfo = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TimeStamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PI_Tracker = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Website = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.ckBoxes = new System.Windows.Forms.CheckedListBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -66,56 +76,106 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.splitContainer2.Panel1.Controls.Add(this.btnOpenDataLog);
-            this.splitContainer2.Panel1.Controls.Add(this.button1);
+            this.splitContainer2.Panel1.Controls.Add(this.btnDelete);
             this.splitContainer2.Panel1.Controls.Add(this.btnAddPrivateInfo);
             this.splitContainer2.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel1_Paint);
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.dataGridView1);
             this.splitContainer2.Panel2.Controls.Add(this.label3);
+            this.splitContainer2.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel2_Paint);
             this.splitContainer2.Size = new System.Drawing.Size(1310, 438);
             this.splitContainer2.SplitterDistance = 64;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // btnOpenDataLog
+            // 
+            this.btnOpenDataLog.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnOpenDataLog.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOpenDataLog.BackgroundImage")));
+            this.btnOpenDataLog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOpenDataLog.Location = new System.Drawing.Point(12, 12);
+            this.btnOpenDataLog.Name = "btnOpenDataLog";
+            this.btnOpenDataLog.Size = new System.Drawing.Size(32, 27);
+            this.btnOpenDataLog.TabIndex = 0;
+            this.toolTip3.SetToolTip(this.btnOpenDataLog, "Open Data Log");
+            this.btnOpenDataLog.UseVisualStyleBackColor = false;
+            this.btnOpenDataLog.Click += new System.EventHandler(this.btnOpenDataLog_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.BackgroundImage")));
+            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelete.Location = new System.Drawing.Point(87, 12);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(31, 27);
+            this.btnDelete.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.btnDelete, "Delete Personal Information");
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnAddPrivateInfo
+            // 
+            this.btnAddPrivateInfo.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnAddPrivateInfo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddPrivateInfo.BackgroundImage")));
+            this.btnAddPrivateInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddPrivateInfo.Location = new System.Drawing.Point(50, 12);
+            this.btnAddPrivateInfo.Name = "btnAddPrivateInfo";
+            this.btnAddPrivateInfo.Size = new System.Drawing.Size(31, 27);
+            this.btnAddPrivateInfo.TabIndex = 1;
+            this.toolTip2.SetToolTip(this.btnAddPrivateInfo, "Add Personal Information");
+            this.btnAddPrivateInfo.UseVisualStyleBackColor = false;
+            this.btnAddPrivateInfo.Click += new System.EventHandler(this.btnAddPrivateInfo_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.HotTrack;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TimeStamp,
+            this.PI_Tracker,
+            this.Website,
+            this.Data});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1310, 370);
+            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // TimeStamp
+            // 
+            this.TimeStamp.HeaderText = "Time Stamp";
+            this.TimeStamp.Name = "TimeStamp";
+            // 
+            // PI_Tracker
+            // 
+            this.PI_Tracker.HeaderText = "Personal Information";
+            this.PI_Tracker.Name = "PI_Tracker";
+            // 
+            // Website
+            // 
+            this.Website.HeaderText = "Website";
+            this.Website.Name = "Website";
+            // 
+            // Data
+            // 
+            this.Data.HeaderText = "Data";
+            this.Data.Name = "Data";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(9, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(0, 17);
             this.label3.TabIndex = 4;
-            this.label3.Text = "label3";
             this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // btnOpenDataLog
-            // 
-            this.btnOpenDataLog.Location = new System.Drawing.Point(12, 20);
-            this.btnOpenDataLog.Name = "btnOpenDataLog";
-            this.btnOpenDataLog.Size = new System.Drawing.Size(103, 22);
-            this.btnOpenDataLog.TabIndex = 0;
-            this.btnOpenDataLog.Text = "Open Data Log";
-            this.btnOpenDataLog.UseVisualStyleBackColor = true;
-            this.btnOpenDataLog.Click += new System.EventHandler(this.btnOpenDataLog_Click);
-            // 
-            // btnAddPrivateInfo
-            // 
-            this.btnAddPrivateInfo.Location = new System.Drawing.Point(138, 20);
-            this.btnAddPrivateInfo.Name = "btnAddPrivateInfo";
-            this.btnAddPrivateInfo.Size = new System.Drawing.Size(75, 23);
-            this.btnAddPrivateInfo.TabIndex = 1;
-            this.btnAddPrivateInfo.Text = "Add PI";
-            this.btnAddPrivateInfo.UseVisualStyleBackColor = true;
-            this.btnAddPrivateInfo.Click += new System.EventHandler(this.btnAddPrivateInfo_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(246, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Update PI";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
             // 
@@ -138,12 +198,19 @@
             // 
             // ckBoxes
             // 
+            this.ckBoxes.AccessibleName = "ckboxes";
+            this.ckBoxes.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ckBoxes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ckBoxes.FormattingEnabled = true;
             this.ckBoxes.Location = new System.Drawing.Point(0, 0);
             this.ckBoxes.Name = "ckBoxes";
             this.ckBoxes.Size = new System.Drawing.Size(1310, 274);
             this.ckBoxes.TabIndex = 0;
+            this.ckBoxes.SelectedIndexChanged += new System.EventHandler(this.ckBoxes_SelectedIndexChanged);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
             // FrmMain
             // 
@@ -160,6 +227,7 @@
             this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -172,11 +240,19 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAddPrivateInfo;
         private System.Windows.Forms.Button btnOpenDataLog;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.CheckedListBox ckBoxes;
+        public System.Windows.Forms.CheckedListBox ckBoxes;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeStamp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PI_Tracker;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Website;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip3;
+        private System.Windows.Forms.ToolTip toolTip2;
     }
 }
