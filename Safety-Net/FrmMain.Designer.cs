@@ -130,8 +130,9 @@
             this.btnAddPrivateInfo.UseVisualStyleBackColor = false;
             this.btnAddPrivateInfo.Click += new System.EventHandler(this.btnAddPrivateInfo_Click);
             // 
-            // dataGridView1
+            // dgvPiTracker
             // 
+
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -142,7 +143,7 @@
             this.Data});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Name = "dgvPiTracker";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1310, 370);
             this.dataGridView1.TabIndex = 5;
@@ -173,7 +174,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(9, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 17);
+            this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 4;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
@@ -221,6 +222,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMain";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
@@ -246,7 +248,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.SplitContainer splitContainer1;
         public System.Windows.Forms.CheckedListBox ckBoxes;
-        private System.Windows.Forms.DataGridView dataGridView1;
+
+        public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeStamp;
         private System.Windows.Forms.DataGridViewTextBoxColumn PI_Tracker;
         private System.Windows.Forms.DataGridViewTextBoxColumn Website;
