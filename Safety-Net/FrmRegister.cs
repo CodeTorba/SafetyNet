@@ -53,11 +53,14 @@ namespace Safety_Net
                 }
                 else
                 {
-
+                    //string testquery = "IF OBJECT_ID('dbo.Users', 'U') IS NOT NULL \n CREATE TABLE Users(FirstName text NOT NULL, LastName text NOT NULL,PhoneNumber text NOT NULL, UserName text  NOT NULL, Password text NOT NULL);"
                     string query = "INSERT INTO Users (FirstName, LastName, PhoneNumber, UserName, Password) VALUES (@First,@Last, @PhoneNum, @uName, @Password)";
                     //string query = "CREATE TABLE Users(FirstName text NOT NULL, LastName text NOT NULL,PhoneNumber text NOT NULL, UserName text  NOT NULL, Password text NOT NULL);";
                     using (SQLiteConnection conn = new SQLiteConnection("data source = Safety-Netdb.db"))
                     {
+                        using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                        {
+                        }
                         using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                         {
 
