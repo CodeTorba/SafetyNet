@@ -21,7 +21,7 @@ namespace Safety_Net
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            groupBox1.BackColor = Color.Cyan;
+          
            
            
         }

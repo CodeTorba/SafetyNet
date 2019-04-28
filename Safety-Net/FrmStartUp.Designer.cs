@@ -46,7 +46,7 @@
             this.lblSafetyNet.Location = new System.Drawing.Point(72, 19);
             this.lblSafetyNet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSafetyNet.Name = "lblSafetyNet";
-            this.lblSafetyNet.Size = new System.Drawing.Size(603, 146);
+            this.lblSafetyNet.Size = new System.Drawing.Size(663, 146);
             this.lblSafetyNet.TabIndex = 0;
             this.lblSafetyNet.Text = "SAFETY-NET";
             // 
@@ -62,7 +62,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(727, 360);
+            this.groupBox1.Size = new System.Drawing.Size(781, 381);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -100,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(727, 360);
+            this.ClientSize = new System.Drawing.Size(781, 381);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
