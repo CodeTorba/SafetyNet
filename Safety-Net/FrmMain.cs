@@ -148,5 +148,10 @@ namespace Safety_Net
             FrmDeletePI deletePI = new FrmDeletePI(this);
             deletePI.Show();
         }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
     }
 }
