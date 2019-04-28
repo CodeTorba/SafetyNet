@@ -37,9 +37,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 61);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(12, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(183, 17);
+            this.label1.Size = new System.Drawing.Size(367, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Delete Personal Information";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -47,7 +49,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(53, 125);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(15, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 17);
             this.label2.TabIndex = 1;
@@ -55,26 +58,30 @@
             // 
             // tbVarName
             // 
-            this.tbVarName.Location = new System.Drawing.Point(56, 145);
+            this.tbVarName.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tbVarName.Location = new System.Drawing.Point(18, 102);
             this.tbVarName.Name = "tbVarName";
             this.tbVarName.Size = new System.Drawing.Size(296, 22);
             this.tbVarName.TabIndex = 2;
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(358, 144);
+            this.btnSubmit.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnSubmit.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnSubmit.Location = new System.Drawing.Point(320, 99);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.Size = new System.Drawing.Size(80, 29);
             this.btnSubmit.TabIndex = 3;
             this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // FrmDeletePI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.ClientSize = new System.Drawing.Size(412, 132);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.tbVarName);
             this.Controls.Add(this.label2);

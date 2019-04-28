@@ -70,5 +70,10 @@ namespace Safety_Net
             phoneNumber.Replace("-", "");
             SendText("1"+ phoneNumber);
         }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+            // UI Improvements
+        }
     }
 }

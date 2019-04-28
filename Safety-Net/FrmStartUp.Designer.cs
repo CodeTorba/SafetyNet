@@ -41,58 +41,69 @@
             this.lblSafetyNet.AccessibleName = "Safety-Net";
             this.lblSafetyNet.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.lblSafetyNet.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.lblSafetyNet.Font = new System.Drawing.Font("Showcard Gothic", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSafetyNet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblSafetyNet.Location = new System.Drawing.Point(47, 28);
+            this.lblSafetyNet.Font = new System.Drawing.Font("Impact", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSafetyNet.ForeColor = System.Drawing.Color.White;
+            this.lblSafetyNet.Location = new System.Drawing.Point(72, 19);
+            this.lblSafetyNet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSafetyNet.Name = "lblSafetyNet";
-            this.lblSafetyNet.Size = new System.Drawing.Size(604, 119);
+            this.lblSafetyNet.Size = new System.Drawing.Size(603, 146);
             this.lblSafetyNet.TabIndex = 0;
             this.lblSafetyNet.Text = "SAFETY-NET";
             // 
             // groupBox1
             // 
             this.groupBox1.AutoSize = true;
+            this.groupBox1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.groupBox1.Controls.Add(this.btnRegister);
             this.groupBox1.Controls.Add(this.btnSignIn);
             this.groupBox1.Controls.Add(this.lblSafetyNet);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(719, 416);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(727, 360);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnRegister
             // 
-            this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(212, 326);
+            this.btnRegister.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnRegister.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnRegister.Location = new System.Drawing.Point(218, 272);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(239, 39);
+            this.btnRegister.Size = new System.Drawing.Size(319, 48);
             this.btnRegister.TabIndex = 3;
             this.btnRegister.Text = "Register";
-            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // btnSignIn
             // 
+            this.btnSignIn.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnSignIn.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignIn.Location = new System.Drawing.Point(212, 255);
+            this.btnSignIn.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignIn.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnSignIn.Location = new System.Drawing.Point(218, 193);
+            this.btnSignIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSignIn.Name = "btnSignIn";
-            this.btnSignIn.Size = new System.Drawing.Size(239, 39);
+            this.btnSignIn.Size = new System.Drawing.Size(319, 48);
             this.btnSignIn.TabIndex = 2;
             this.btnSignIn.Text = "Sign In";
-            this.btnSignIn.UseVisualStyleBackColor = true;
+            this.btnSignIn.UseVisualStyleBackColor = false;
             this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // FrmStartUp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 416);
+            this.ClientSize = new System.Drawing.Size(727, 360);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmStartUp";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
