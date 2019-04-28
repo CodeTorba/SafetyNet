@@ -30,22 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.btnOpenDataLog = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAddPrivateInfo = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TimeStamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PI_Tracker = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Website = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.ckBoxes = new System.Windows.Forms.CheckedListBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
+            this.TimeStamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PI_Tracker = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Website = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -88,7 +93,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.label3);
             this.splitContainer2.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel2_Paint);
             this.splitContainer2.Size = new System.Drawing.Size(1310, 438);
-            this.splitContainer2.SplitterDistance = 64;
+            this.splitContainer2.SplitterDistance = 25;
             this.splitContainer2.TabIndex = 0;
             // 
             // btnOpenDataLog
@@ -96,7 +101,7 @@
             this.btnOpenDataLog.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnOpenDataLog.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOpenDataLog.BackgroundImage")));
             this.btnOpenDataLog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOpenDataLog.Location = new System.Drawing.Point(12, 12);
+            this.btnOpenDataLog.Location = new System.Drawing.Point(0, 0);
             this.btnOpenDataLog.Name = "btnOpenDataLog";
             this.btnOpenDataLog.Size = new System.Drawing.Size(32, 27);
             this.btnOpenDataLog.TabIndex = 0;
@@ -109,7 +114,7 @@
             this.btnDelete.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.BackgroundImage")));
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDelete.Location = new System.Drawing.Point(87, 12);
+            this.btnDelete.Location = new System.Drawing.Point(75, 0);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(31, 27);
             this.btnDelete.TabIndex = 2;
@@ -122,7 +127,7 @@
             this.btnAddPrivateInfo.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnAddPrivateInfo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddPrivateInfo.BackgroundImage")));
             this.btnAddPrivateInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAddPrivateInfo.Location = new System.Drawing.Point(50, 12);
+            this.btnAddPrivateInfo.Location = new System.Drawing.Point(38, 0);
             this.btnAddPrivateInfo.Name = "btnAddPrivateInfo";
             this.btnAddPrivateInfo.Size = new System.Drawing.Size(31, 27);
             this.btnAddPrivateInfo.TabIndex = 1;
@@ -134,6 +139,14 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TimeStamp,
@@ -145,29 +158,9 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1310, 370);
+            this.dataGridView1.Size = new System.Drawing.Size(1310, 409);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // TimeStamp
-            // 
-            this.TimeStamp.HeaderText = "Time Stamp";
-            this.TimeStamp.Name = "TimeStamp";
-            // 
-            // PI_Tracker
-            // 
-            this.PI_Tracker.HeaderText = "Personal Information";
-            this.PI_Tracker.Name = "PI_Tracker";
-            // 
-            // Website
-            // 
-            this.Website.HeaderText = "Website";
-            this.Website.Name = "Website";
-            // 
-            // Data
-            // 
-            this.Data.HeaderText = "Data";
-            this.Data.Name = "Data";
             // 
             // label3
             // 
@@ -202,6 +195,8 @@
             this.ckBoxes.AccessibleName = "ckboxes";
             this.ckBoxes.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ckBoxes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckBoxes.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckBoxes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ckBoxes.FormattingEnabled = true;
             this.ckBoxes.Location = new System.Drawing.Point(0, 0);
             this.ckBoxes.Name = "ckBoxes";
@@ -212,6 +207,42 @@
             // toolTip1
             // 
             this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
+            // 
+            // TimeStamp
+            // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TimeStamp.DefaultCellStyle = dataGridViewCellStyle2;
+            this.TimeStamp.HeaderText = "Time Stamp";
+            this.TimeStamp.Name = "TimeStamp";
+            // 
+            // PI_Tracker
+            // 
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.PI_Tracker.DefaultCellStyle = dataGridViewCellStyle3;
+            this.PI_Tracker.HeaderText = "Personal Information";
+            this.PI_Tracker.Name = "PI_Tracker";
+            // 
+            // Website
+            // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Website.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Website.HeaderText = "Website";
+            this.Website.Name = "Website";
+            // 
+            // Data
+            // 
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Avenir LT Std 55 Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Data.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Data.HeaderText = "Data";
+            this.Data.Name = "Data";
             // 
             // FrmMain
             // 
@@ -248,12 +279,12 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         public System.Windows.Forms.CheckedListBox ckBoxes;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip3;
+        private System.Windows.Forms.ToolTip toolTip2;
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeStamp;
         private System.Windows.Forms.DataGridViewTextBoxColumn PI_Tracker;
         private System.Windows.Forms.DataGridViewTextBoxColumn Website;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
-        private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.ToolTip toolTip3;
-        private System.Windows.Forms.ToolTip toolTip2;
     }
 }
