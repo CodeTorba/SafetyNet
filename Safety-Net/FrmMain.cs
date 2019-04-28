@@ -15,9 +15,11 @@ namespace Safety_Net
     {
         public string userName;
         public List<PI> allPis;
+        FiddlerProxy fd;
         public FrmMain(string uname)
         {
             userName = uname;
+            fd = new FiddlerProxy(this);
             InitializeComponent();
         }
 
@@ -62,18 +64,20 @@ namespace Safety_Net
 
             // newThread.Start();
             allPis = grabPIFromDatabase();
-            foreach(PI x in allPis)
+            foreach (PI x in allPis)
             {
                 ckBoxes.Items.Add(x.getVarName());
 
             }
-            
-
-
-
-
+            fd.InstallCertificate();
+            fd.Start();
+            fd.Stop();
+            fd.UninstallCertificate();
         }
-
+        public void setDataGridView(string time, string info, string website, string data)
+        {
+            dgvPiTracker.Rows.Add(time, info, website, data);
+        }
         private void btnAddPrivateInfo_Click(object sender, EventArgs e)
         {
             FrmAddPI addPI = new FrmAddPI(userName, this);
@@ -147,6 +151,12 @@ namespace Safety_Net
         {
             FrmDeletePI deletePI = new FrmDeletePI(this);
             deletePI.Show();
+        }
+
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           // fd.Stop();
+           // fd.UninstallCertificate();
         }
     }
 }

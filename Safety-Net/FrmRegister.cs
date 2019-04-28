@@ -54,8 +54,8 @@ namespace Safety_Net
                 else
                 {
 
-                    string query = "INSERT INTO Users (FirstName, LastName, PhoneNumber, UserName, Password) VALUES (@First,@Last, @PhoneNum, @uName, @Password)";
-                    //string query = "CREATE TABLE Users(FirstName text NOT NULL, LastName text NOT NULL,PhoneNumber text NOT NULL, UserName text  NOT NULL, Password text NOT NULL);";
+                   string query = "INSERT INTO Users (FirstName, LastName, PhoneNumber, UserName, Password) VALUES (@First,@Last, @PhoneNum, @uName, @Password)";
+                   // string query = "CREATE TABLE Users(FirstName text NOT NULL, LastName text NOT NULL,PhoneNumber text NOT NULL, UserName text  NOT NULL, Password text NOT NULL);";
                     using (SQLiteConnection conn = new SQLiteConnection("data source = Safety-Netdb.db"))
                     {
                         using (SQLiteCommand cmd = new SQLiteCommand(query, conn))

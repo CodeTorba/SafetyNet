@@ -34,7 +34,7 @@
             this.btnOpenDataLog = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAddPrivateInfo = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPiTracker = new System.Windows.Forms.DataGridView();
             this.TimeStamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PI_Tracker = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Website = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +46,7 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPiTracker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -79,7 +79,7 @@
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.dataGridView1);
+            this.splitContainer2.Panel2.Controls.Add(this.dgvPiTracker);
             this.splitContainer2.Panel2.Controls.Add(this.label3);
             this.splitContainer2.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel2_Paint);
             this.splitContainer2.Size = new System.Drawing.Size(1310, 438);
@@ -116,22 +116,22 @@
             this.btnAddPrivateInfo.UseVisualStyleBackColor = true;
             this.btnAddPrivateInfo.Click += new System.EventHandler(this.btnAddPrivateInfo_Click);
             // 
-            // dataGridView1
+            // dgvPiTracker
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvPiTracker.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPiTracker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPiTracker.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TimeStamp,
             this.PI_Tracker,
             this.Website,
             this.Data});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1310, 370);
-            this.dataGridView1.TabIndex = 5;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvPiTracker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPiTracker.Location = new System.Drawing.Point(0, 0);
+            this.dgvPiTracker.Name = "dgvPiTracker";
+            this.dgvPiTracker.RowTemplate.Height = 24;
+            this.dgvPiTracker.Size = new System.Drawing.Size(1310, 370);
+            this.dgvPiTracker.TabIndex = 5;
+            this.dgvPiTracker.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // TimeStamp
             // 
@@ -158,7 +158,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(9, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 17);
+            this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 4;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
@@ -201,13 +201,14 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMain";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPiTracker)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -226,10 +227,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.SplitContainer splitContainer1;
         public System.Windows.Forms.CheckedListBox ckBoxes;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TimeStamp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PI_Tracker;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Website;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
+        public System.Windows.Forms.DataGridView dgvPiTracker;
+        public System.Windows.Forms.DataGridViewTextBoxColumn TimeStamp;
+        public System.Windows.Forms.DataGridViewTextBoxColumn PI_Tracker;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Website;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Data;
     }
 }
