@@ -16,6 +16,7 @@ namespace Safety_Net
         public string userName;
         public List<PI> allPis;
         FiddlerProxy fd;
+        public List<PI> checkedPis;
         public FrmMain(string uname)
         {
             userName = uname;
@@ -67,6 +68,21 @@ namespace Safety_Net
             foreach (PI x in allPis)
             {
                 ckBoxes.Items.Add(x.getVarName());
+                // Getting List of all checked items
+
+                /*
+                int i;
+                string[] CheckedList = new string[ckBoxes.Items.Count];
+
+                for (i = 0; i <= (ckBoxes.Items.Count - 1); i++)
+                {
+                    if (ckBoxes.GetItemChecked(i))
+                    {
+                        ckBoxes.Items[i].ToString();
+                    }
+                }
+                */
+               
 
             }
             fd.InstallCertificate();
@@ -162,6 +178,11 @@ namespace Safety_Net
         {
            // fd.Stop();
            // fd.UninstallCertificate();
+        }
+
+        private void ckBoxes_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+          
         }
     }
 }

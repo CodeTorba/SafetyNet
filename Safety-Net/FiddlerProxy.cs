@@ -97,7 +97,7 @@ namespace Safety_Net
             dlog.Data = reqBody;
             dlog.hostName = sess.hostname;
             dlog.Timestamp = sess.Timers.FiddlerGotRequestHeaders.ToLongTimeString();
-            foreach(PI x in main.allPis)
+            foreach(PI x in main.checkedPis)
             {
                 if(reqBody.Contains(x.getVarInfo()))
                 {
