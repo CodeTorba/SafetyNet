@@ -17,7 +17,7 @@ namespace Safety_Net
         }
         public void Start()
         {
-           // FiddlerCoreStartupFlags flags = FiddlerCoreStartupFlags.DecryptSSL & FiddlerCoreStartupFlags.CaptureFTP & FiddlerCoreStartupFlags.ChainToUpstreamGateway & FiddlerCoreStartupFlags.MonitorAllConnections;
+            // FiddlerCoreStartupFlags flags = FiddlerCoreStartupFlags.DecryptSSL & FiddlerCoreStartupFlags.CaptureFTP & FiddlerCoreStartupFlags.ChainToUpstreamGateway & FiddlerCoreStartupFlags.MonitorAllConnections;
             FiddlerApplication.AfterSessionComplete += FiddlerApplication_AfterSessionComplete;
             FiddlerApplication.Startup(8888, true, true, true);
         }
@@ -37,18 +37,25 @@ namespace Safety_Net
                 if (!CertMaker.trustRootCert())
                     return false;
             }
-            
+
             var cert = FiddlerApplication.Prefs.GetStringPref("fiddler.certmaker.bc.cert", null);
             var key = FiddlerApplication.Prefs.GetStringPref("fiddler.certmaker.bc.key", null);
             CertMaker.trustRootCert();
             FiddlerApplication.Log.OnLogString += delegate (object sender, LogEventArgs e)
             {
                 Console.WriteLine("Log {0}", e.LogString);
-                
+
             };
             return true;
         }
-        public  bool UninstallCertificate()
+
+        delegate void SetDataGridCallback(string time, string info, string website, string data);
+        
+        public void setMainDataGridView(string time, string info, string website, string data)
+        {
+            main.dataGridView1.Rows.Add(time, info, website, data);
+        }
+        public bool UninstallCertificate()
         {
             if (CertMaker.rootCertExists())
             {
@@ -94,12 +101,15 @@ namespace Safety_Net
             {
                 if(reqBody.Contains(x.getVarInfo()))
                 {
-                    IntPtr gridHandle = main.Handle;
-                    main.dataGridView1.Invoke(new Action(delegate ()
+                    if (main.dataGridView1.InvokeRequired)
                     {
-                        main.dataGridView1.Rows.Add(dlog.Timestamp, x.getVarName(), dlog.hostName, dlog.Data);
-                    }));
-                    //main.setDataGridView(dlog.Timestamp, x.getVarName(), dlog.hostName, dlog.Data);
+                        SetDataGridCallback d = new SetDataGridCallback(setMainDataGridView);
+                        main.dataGridView1.Invoke(d, new object[] { dlog.Timestamp, x.getVarName(), dlog.hostName, dlog.Data });
+                    }
+                    else
+                    {
+                        Console.WriteLine("found it");
+                    }
                 }
             }
 
